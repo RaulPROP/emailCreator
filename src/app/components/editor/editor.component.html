@@ -1,0 +1,88 @@
+<div class="wrapper-all">
+
+  <div class="header">
+    <h1 class="title">Editor</h1>
+  </div>
+
+  <div class="content">
+
+    <div class="options-wrapper wrapper-all" *ngIf="selectedElement !== null">
+
+      <mat-form-field class="two-items" floatLabel="always">
+        <input [disabled]="autoWidth" [min]="'1'" id="widthInput" matInput placeholder="width (px)" type="number" (change)="onWidthChange($event)" [(ngModel)]="selectedElement.elementSettings.width">
+      </mat-form-field>
+      <mat-checkbox (change)="toggleWidth($event)" class="two-items" [(ngModel)]="autoWidth">Auto Width</mat-checkbox>
+
+      <mat-form-field class="two-items" floatLabel="always">
+        <input [disabled]="autoHeight" [min]="'1'" id="heightInput" matInput placeholder="height (px)" type="number" (change)="onHeightChange($event)" [(ngModel)]="selectedElement.elementSettings.height">
+      </mat-form-field>
+      <mat-checkbox (change)="toggleHeight($event)" class="two-items" [(ngModel)]="autoHeight">Auto Height</mat-checkbox>
+
+      <mat-checkbox (change)="toggleMargin($event)" class="block" [(ngModel)]="marginTogether">Group Margin</mat-checkbox>
+      <mat-form-field style="display: block;" floatLabel="always" *ngIf="marginTogether" >
+        <input id="marginInput" [min]="'0'" matInput placeholder="margin (px)" type="number" (change)="onMarginChange($event, 'all')" [(ngModel)]="selectedElement.elementSettings.margin.top">
+      </mat-form-field>
+
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!marginTogether" >
+        <input id="marginInputLeft" [min]="'0'"matInput placeholder="left (px)" type="number" (change)="onMarginChange($event, 'left')" [(ngModel)]="selectedElement.elementSettings.margin.left">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!marginTogether" >
+        <input id="marginInputRight" [min]="'0'"matInput placeholder="right (px)" type="number" (change)="onMarginChange($event, 'right')" [(ngModel)]="selectedElement.elementSettings.margin.right">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!marginTogether" >
+        <input id="marginInputTop" [min]="'0'"matInput placeholder="top (px)" type="number" (change)="onMarginChange($event, 'top')" [(ngModel)]="selectedElement.elementSettings.margin.top">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!marginTogether" >
+        <input id="marginInputBottom" [min]="'0'"matInput placeholder="bottom (px)" type="number" (change)="onMarginChange($event, 'bottom')" [(ngModel)]="selectedElement.elementSettings.margin.bottom">
+      </mat-form-field>
+
+      <mat-checkbox (change)="togglePadding($event)" class="block" [(ngModel)]="paddingTogether">Group Padding</mat-checkbox>
+      <mat-form-field style="display: block;" floatLabel="always" *ngIf="paddingTogether" >
+        <input id="paddingInput" [min]="'0'" matInput placeholder="padding (px)" type="number" (change)="onPaddingChange($event, 'all')" [(ngModel)]="selectedElement.elementSettings.padding.top">
+      </mat-form-field>
+
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!paddingTogether" >
+        <input id="paddingInputLeft" [min]="'0'" matInput placeholder="left (px)" type="number" (change)="onPaddingChange($event, 'left')" [(ngModel)]="selectedElement.elementSettings.padding.left">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!paddingTogether" >
+        <input id="paddingInputRight" [min]="'0'" matInput placeholder="right (px)" type="number" (change)="onPaddingChange($event, 'right')" [(ngModel)]="selectedElement.elementSettings.padding.right">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!paddingTogether" >
+        <input id="paddingInputTop" [min]="'0'" matInput placeholder="top (px)" type="number" (change)="onPaddingChange($event, 'top')" [(ngModel)]="selectedElement.elementSettings.padding.top">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!paddingTogether" >
+        <input id="paddingInputBottom" [min]="'0'" matInput placeholder="bottom (px)" type="number" (change)="onPaddingChange($event, 'bottom')" [(ngModel)]="selectedElement.elementSettings.padding.bottom">
+      </mat-form-field>
+
+      <mat-checkbox (change)="toggleBorderRadius($event)" class="block" [(ngModel)]="borderRadiusTogether">Group BorderRadius</mat-checkbox>
+      <mat-form-field style="display: block;" floatLabel="always" *ngIf="borderRadiusTogether" >
+        <input id="borderRadiusInput" [min]="'0'" matInput placeholder="borderRadius (px)" type="number" (change)="onBorderRadiusChange($event, 'all')" [(ngModel)]="selectedElement.elementSettings.borderRadius.topLeft">
+      </mat-form-field>
+
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!borderRadiusTogether" >
+        <input id="borderRadiusInputTopLeft" [min]="'0'" matInput placeholder="top-left (px)" type="number" (change)="onBorderRadiusChange($event, 'topLeft')" [(ngModel)]="selectedElement.elementSettings.borderRadius.topLeft">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!borderRadiusTogether" >
+        <input id="borderRadiusInputTopRight" [min]="'0'" matInput placeholder="top-right (px)" type="number" (change)="onBorderRadiusChange($event, 'topRight')" [(ngModel)]="selectedElement.elementSettings.borderRadius.topRight">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!borderRadiusTogether" >
+        <input id="borderRadiusInputBottomLeft" [min]="'0'" matInput placeholder="bottom-left (px)" type="number" (change)="onBorderRadiusChange($event, 'bottomLeft')" [(ngModel)]="selectedElement.elementSettings.borderRadius.bottomLeft">
+      </mat-form-field>
+      
+      <mat-form-field class="four-items" floatLabel="always" *ngIf="!borderRadiusTogether" >
+        <input id="borderRadiusInputBottomRight" [min]="'0'" matInput placeholder="bottom-right (px)" type="number" (change)="onBorderRadiusChange($event, 'bottomRight')" [(ngModel)]="selectedElement.elementSettings.borderRadius.bottomRight">
+      </mat-form-field>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+.block {
+
+  display: block;
+
+  width: 100%;
+
+}
+
+.two-items {
+
+  display: inline-block;
+
+  width:calc(50% - 2px);
+
+  margin-right: 2px;
+
+}
+
+.four-items {
+
+  display: inline-block;
+
+  width:calc(25% - 2px);
+
+  margin-right: 2px;
+
+}

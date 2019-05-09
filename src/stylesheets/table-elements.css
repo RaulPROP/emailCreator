@@ -1,0 +1,138 @@
+[class^="element-"], [class*=" element-"] {
+
+}
+
+.element-editable {
+
+  position: relative;
+
+  --element-margin-left: 1px;
+  --element-margin-right: 1px;
+  --element-margin-top: 1px;
+  --element-margin-bottom: 1px;
+
+  --element-border-left: 1px;
+  --element-border-right: 1px;
+  --element-border-top: 1px;
+  --element-border-bottom: 1px;
+
+  --element-padding-left: 1px;
+  --element-padding-right: 1px;
+  --element-padding-top: 1px;
+  --element-padding-bottom: 1px;
+
+  --element-content-width: 50px;
+  --element-content-height: 50px;
+
+  --element-border-radius-top-left: 0px;
+  --element-border-radius-top-right: 0px;
+  --element-border-radius-bottom-left: 0px;
+  --element-border-radius-bottom-right: 0px;
+
+  --box-shadow-horizontal: 0px;
+  --box-shadow-vertical: 0px;
+  --box-shadow-blur: 0px;
+  --box-shadow-inner: 0px;
+  
+  --element-margin-width: calc(var(--element-margin-left) + var(--element-margin-right));
+  --element-margin-height: calc(var(--element-margin-top) + var(--element-margin-bottom));
+  
+  --element-border-width: calc(var(--element-border-left) + var(--element-border-right));
+  --element-border-height: calc(var(--element-border-top) + var(--element-border-bottom));
+  
+  --element-padding-width: calc(var(--element-padding-left) + var(--element-padding-right));
+  --element-padding-height: calc(var(--element-padding-top) + var(--element-padding-bottom));
+  
+  width: calc(var(--element-margin-width) + var(--element-border-width) + var(--element-padding-width) + var(--element-content-width));
+  height: calc(var(--element-margin-height) + var(--element-border-height) + var(--element-padding-height) + var(--element-content-height));
+
+  border: 2px dotted blue;
+
+  cursor: pointer;
+
+}
+
+.element-editable.selected {
+
+  border: 2px solid red;
+
+}
+
+.element-editable.selected::after {
+
+  content: '';
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: red;
+
+  opacity: 0.3;
+
+}
+
+.element-margin {
+
+  background-color: var(--color-margin);
+
+  padding: var(--element-margin-top) var(--element-margin-right) var(--element-margin-bottom) var(--element-margin-left);
+
+}
+
+.element-border {
+
+  border-top: var(--color-border) solid var(--element-border-top);
+  border-right: var(--color-border) solid var(--element-border-right);
+  border-bottom: var(--color-border) solid var(--element-border-bottom);
+  border-left: var(--color-border) solid var(--element-border-left);
+
+}
+
+.element-editable.with-shadow .element-border {
+
+  -webkit-box-shadow: var(--box-shadow-horizontal) var(--box-shadow-vertical) var(--box-shadow-blur) var(--box-shadow-inner);
+  -moz-box-shadow: var(--box-shadow-horizontal) var(--box-shadow-vertical) var(--box-shadow-blur) var(--box-shadow-inner);
+  box-shadow: var(--box-shadow-horizontal) var(--box-shadow-vertical) var(--box-shadow-blur) var(--box-shadow-inner);
+
+}
+
+.element-editable.with-shadow.inner-shadow .element-border {
+
+  -webkit-box-shadow: inset var(--box-shadow-horizontal) var(--box-shadow-vertical) var(--box-shadow-blur) var(--box-shadow-inner);
+  -moz-box-shadow: inset var(--box-shadow-horizontal) var(--box-shadow-vertical) var(--box-shadow-blur) var(--box-shadow-inner);
+  box-shadow: inset var(--box-shadow-horizontal) var(--box-shadow-vertical) var(--box-shadow-blur) var(--box-shadow-inner);
+
+}
+
+.element-padding {
+
+  background-color: var(--color-padding);
+
+  border-radius: var(--element-border-radius-top-left) var(--element-border-radius-top-right) var(--element-border-radius-bottom-left) var(--element-border-radius-bottom-right);
+
+  padding: var(--element-padding-top) var(--element-padding-right) var(--element-padding-bottom) var(--element-padding-left);
+
+}
+
+.element-content {
+
+  background-color: var(--color-content);
+
+  border-radius: var(--element-border-radius-top-left) var(--element-border-radius-top-right) var(--element-border-radius-bottom-left) var(--element-border-radius-bottom-right);
+
+  width: var(--element-content-width);
+  height: var(--element-content-height);
+
+}
+
+.element-auto-height {
+  height: auto !important;
+}
+
+.element-auto-width {
+  width: auto !important;
+}

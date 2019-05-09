@@ -1,0 +1,37 @@
+.header {
+
+  height: 80px;
+
+  text-align: center;
+
+  border-bottom: 1px solid var(--color-main);
+
+  background-color: var(--color-base-light);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.title {
+
+  margin: 0;
+
+}
+
+.content {
+
+  height: calc(100% - 80px);
+
+  background-color: var(--color-base-dark);
+
+  padding: 20px;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  overflow-y: auto;
+
+}

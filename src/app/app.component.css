@@ -1,0 +1,33 @@
+.wrapper-all {
+
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  --editor-width: 700px;
+
+}
+
+.block-wrapper:not(:last-child) {
+
+  border-right: 1px solid var(--color-main);
+
+}
+
+.email-wrapper {
+
+  width: calc(100% / 3);
+
+}
+
+.html-wrapper {
+
+  width: calc(100% / 3);
+
+}
+
+.editor-wrapper {
+
+  width: calc(100% / 3);
+
+}
